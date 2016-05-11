@@ -1,0 +1,63 @@
+<!--index-->
+<template name="company">
+    {{# if Template.subscriptionsReady}}
+        {{#with data}}
+            <p>
+                <button type="button" class="btn btn-primary update" id="js-update">{{fa "edit"}} Update</button>
+            </p>
+            <div class="row">
+                <div class="col-md-6">
+                    <dl class="dl-horizontal">
+                        <dt>Khmer Name</dt>
+                        <dd>{{khName}}</dd>
+                        <dt>Khmer Short Name</dt>
+                        <dd>{{khShortName}}</dd>
+                        <dt>English Name</dt>
+                        <dd>{{enName}}</dd>
+                        <dt>English Short Name</dt>
+                        <dd>{{enShortName}}</dd>
+                        <dt>Khmer Address</dt>
+                        <dd>{{khAddress}}</dd>
+                    </dl>
+                </div>
+                <div class="col-md-6">
+                    <dl class="dl-horizontal">
+                        <dt>English Address</dt>
+                        <dd>{{enAddress}}</dd>
+                        <dt>Telephone</dt>
+                        <dd>{{telephone}}</dd>
+                        <dt>Email</dt>
+                        <dd>{{email}}</dd>
+                        <dt>Website</dt>
+                        <dd>{{website}}</dd>
+                    </dl>
+                </div>
+            </div>
+        {{/with}}
+    {{else}}
+        {{> spinner}}
+    {{/if}}
+</template>
+<!-- update -->
+<template name="companyUpdate">
+    {{#autoForm collection="Collection.Company" id="companyUpdate" doc=this type="update"}}
+        <fieldset>
+            <div class="row">
+                <div class="col-md-6">
+                    {{> afQuickField name='khName'}}
+                    {{> afQuickField name='khShortName'}}
+                    {{> afQuickField name='enName'}}
+                    {{> afQuickField name='enShortName'}}
+                    {{> afQuickField name='khAddress'}}
+                </div>
+                <div class="col-md-6">
+                    {{> afQuickField name='enAddress'}}
+                    {{> afQuickField name='telephone'}}
+                    {{> afQuickField name='email'}}
+                    {{> afQuickField name='website'}}
+                </div>
+            </div>
+        </fieldset>
+        <button type="submit" class="btn btn-primary fa fa-save"> Update</button>
+    {{/autoForm}}
+</template>

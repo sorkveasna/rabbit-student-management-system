@@ -1,0 +1,115 @@
+<!--Form-->
+<template name="registerRpt">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            {{#autoForm schema="Schema.RegisterRpt" id="registerRpt"}}
+                <fieldset>
+                    <div class="row">
+                        <div class="col-md-6">
+                            {{>afQuickField name= "fromDate"}}
+                            {{>afQuickField name= "toDate"}}
+                        </div>
+                        <div class="col-md-6">
+                            {{>afQuickField name= "subject" options=subject}}
+                            {{>afQuickField name= "day" options=day}}
+                        </div>
+                    </div>
+                </fieldset>
+                <Button type="submit" class="btn btn-primary"> View</Button>
+            {{/autoForm}}
+        </div>
+    </div>
+</template>
+
+<template name="registerRptGen">
+
+    <div class="report-body">
+        <div class="paper-a4-landscape">
+            <div class="title">
+                <table class="report-title" style="width:100%;">
+                    <tr align="center">
+
+                        <td colspan="2">
+                        <td>
+                            <img src="/rabbit1.png">&nbsp;
+                        </td>
+                        {{#each company}}
+                            <td>
+                  <span class="report-company-name"
+                        style="font-family: 'Khmer OS Muol">{{khName}}</span><br>
+                                <span class="report-company-name">{{enName}}</span><br>
+                                <u>Subject Report</u><br>
+                                {{khAddress}}, {{telephone}}
+                            </td>
+                        {{/each}}
+
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!--date-->
+            Date: {{registerRptDoc.header.date}}
+
+            <!--<table>-->
+                <!--<tr>-->
+                    <!--<th>Subject: {{subject}}</th>-->
+                    <!--<th>Day: {{day}}</th>-->
+                <!--</tr>-->
+            <!--</table>-->
+
+            <div style="width: 100%">
+                <!--<div style="width: 50%; float: left">-->
+                <!--<div><strong>Branch:</strong> {{branch}}</div>-->
+                <!--<div><strong>CustomerId:</strong> {{customerId}}</div>-->
+                <!--</div>-->
+
+                <!--content-->
+                <!--<div class="table-responsive">-->
+                <table class="report-content">
+                    <thead class="content-header">
+                    <tr class="bg-info">
+                        <th>No</th>
+                        <th>Reg ID</th>
+                        <th>Reg Date</th>
+                        <th>Student</th>
+                        <th>Subject</th>
+                        <th>day</th>
+                        <th>Price</th>
+                        <th>Discount</th>
+                        <th>Amount</th>
+                    </tr>
+                    </thead>
+                    <tbody class="content-body">
+                    {{#with registerRptDoc}}
+                        {{#each content}}
+                            <tr>
+                                <td align="center">{{no @index}}</td>
+                                <td align="center">{{_id}}</td>
+                                <td align="center">{{moFormat regDate "DD/MM/YYYY"}}</td>
+                                <td align="center">{{_student.latinName}}</td>
+                                <td align="center">{{_subject.name}}</td>
+                                <td align="center">{{day}}</td>
+                                <td align="center">{{numFormat price "$ 0,0.00"}}</td>
+                                <td align="center">{{numFormat discount "$ 0,0.00"}}</td>
+                                <td align="center">{{numFormat amount "$ 0,0.00"}}</td>
+                            </tr>
+                        {{/each}}
+                        <tr>
+                            <td colspan="7"></td>
+                            <td align="center">Grand Total</td>
+                            {{#with footer}}
+                                <td align="center">{{numFormat total "$ 0,0.00"}}</td>
+                            {{/with}}
+                        </tr>
+                    {{/with}}
+                    </tbody>
+                </table>
+                <br>
+                <!--sign-->
+                {{> signFooter}}
+            </div>
+        </div>
+    </div>
+</template>
+

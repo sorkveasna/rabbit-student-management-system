@@ -1,0 +1,106 @@
+/*Navbar*/
+.my-navbar {
+  color: #fff;
+  background-color: #00695c;
+}
+.my-nabar:hover {
+  background-color: #fff;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffffff;
+}
+.navbar-nav li a:hover, .navbar-nav li.active a {
+  color: #00695c !important;
+  background-color: #fff !important;
+}
+.navbar-nav > li > .dropdown-menu {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+/*breadcrumb*/
+.breadcrumb {
+    background: none;
+    float: right;
+    font-size: 14px;
+    color: #00695c;
+}
+a {
+    color: #00695c;
+}
+.sys-logo{
+    background-color: #337ab7;
+    margin-top: 8px;
+    /*width: 160px;*/
+    height: 32px;
+}
+element.style {
+    font-size: 28px;
+    font-weight: bold;
+    color: #00695C;
+}
+legend {
+    color: #00695c;
+}
+.alertify.ajs-resizable .ajs-header, .alertify.ajs-maximized .ajs-header {
+    background: #00695c ;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 16px 24px;
+    color: #000;
+}
+#login-dropdown-list a {
+    cursor: pointer;
+    font-size: 19px;
+}
+.panel-default > .panel-heading {
+    color: #fff;
+    background-color: #00695c;
+    border-color: #00695c;
+}
+.form-control{
+  border-radius: 0;
+}
+.btn {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+.table > caption + thead > tr:first-child > th, .table > colgroup + thead > tr:first-child > th, .table > thead:first-child > tr:first-child > th, .table > caption + thead > tr:first-child > td, .table > colgroup + thead > tr:first-child > td, .table > thead:first-child > tr:first-child > td {
+    text-align: center;
+}
+.panel-default > .panel-heading {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border: #fff;
+}
+.sys-logo {
+    background-color: rgb(0, 105, 92);
+}
+/*************************************************************************************************/
+/* Add asterisk (*) after the label for required fields
+------------------------------*/
+[data-required] label:after {
+    content: '*';
+    color: red;
+}
+
+img {
+    vertical-align: middle;
+    margin: 9px;
+    margin-right: 5px;
+}
+
+/*Font Size Of Login*/
+#login-dropdown-list a {
+    font-size: 14px;
+}

@@ -1,0 +1,51 @@
+.navbar-inverse {
+    background-color: #00796b;
+    border-color: #00796b;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    color: #fff;
+    background-color: #00695C;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #e0e0e0;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #e0e0e0;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #fff !important;
+    background-color: #00695c !important;
+}
+/*title padding*/
+p {
+    margin: 0 0 10px;
+    padding-bottom: 9px;
+}
+div.dataTables_wrapper div.dataTables_length label {
+    font-weight: normal;
+    text-align: left;
+    white-space: nowrap;
+    padding-bottom: 7px;
+}
+/*td:hover {*/
+    /*background-color: #00695c;*/
+/*}*/
+.hoverTable{
+    width:100%;
+    border-collapse:collapse;
+}
+.hoverTable td{
+    padding:7px; border:#4e95f4 1px solid;
+}
+/* Define the default color for all the table rows */
+.hoverTable tr{
+    background: #b8d1f3;
+}
+/* Define the hover highlight color for the table row */
+.hoverTable tr:hover {
+    background-color: #ffff99;
+}

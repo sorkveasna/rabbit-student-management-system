@@ -1,0 +1,140 @@
+<!--Form-->
+<template name="osRpt">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            {{#autoForm schema="Schema.OsRpt" id="osRpt"}}
+                <fieldset>
+                    {{>afQuickField name= "asAt"}}
+                </fieldset>
+                <Button type="submit" class="btn btn-primary"> View</Button>
+            {{/autoForm}}
+        </div>
+    </div>
+</template>
+
+<template name="osRptGen">
+
+    <div class="report-body">
+        <div class="paper-a4-landscape">
+            <div class="title">
+                <table class="report-title" style="width:100%;">
+                    <tr align="center">
+
+                        <td colspan="2">
+                        <td>
+                            <img src="/rabbit1.png">&nbsp;
+                        </td>
+                        {{#each company}}
+                            <td>
+                  <span class="report-company-name"
+                        style="font-family: 'Khmer OS Muol">{{khName}}</span><br>
+                                <span class="report-company-name">{{enName}}</span><br>
+                                <u>Subject Report</u><br>
+                                {{khAddress}}, {{telephone}}
+                            </td>
+                        {{/each}}
+
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!--date-->
+            Date: {{osRptDoc.header.date}}
+
+            <div style="width: 100%">
+                <!--<div style="width: 50%; float: left">-->
+                <!--<div><strong>Branch:</strong> {{branch}}</div>-->
+                <!--<div><strong>CustomerId:</strong> {{customerId}}</div>-->
+                <!--</div>-->
+
+                <!--content-->
+                <!--<div class="table-responsive">-->
+                <table class="report-content">
+                    <thead class="content-header">
+                    <tr class="bg-info">
+                        <th>No</th>
+                        <th>Reg ID</th>
+                        <th>Reg Date</th>
+                        <th>Student</th>
+                        <th>Subject</th>
+                        <th>OS Amount</th>
+                    </tr>
+                    </thead>
+                    <tbody class="content-body">
+                    {{#with osRptDoc}}
+                        {{#each content}}
+                            <tr>
+                                <td>{{no @index}}</td>
+                                <td>{{_id}}</td>
+                                <td>{{moFormat regDate "DD/MM/YYYY"}}</td>
+                                <td>{{_student.latinName}}</td>
+                                <td>{{_subject.name}}</td>
+                                <td>{{numFormat osAmount "$ 0,0.00"}}</td>
+                            </tr>
+                        {{/each}}
+                        <tr>
+                            <td colspan="4"></td>
+                            <td align="">Grand Total</td>
+                            {{#with osAmount}}
+                                <td align="">{{numFormat total "$ 0,0.00"}}</td>
+                            {{/with}}
+                        </tr>
+                    {{/with}}
+                    </tbody>
+                </table>
+                <br>
+                <!--sign-->
+                {{> signFooter}}
+            </div>
+        </div>
+    </div>
+
+
+    <!--<h2 style="text-align: center">Rabbit IT Solution</h2>-->
+    <!--<h3 style="text-align: center">OS Payment Report</h3>-->
+    <!--Date: {{osRptDoc.header.date}}-->
+
+    <!--<div class="table-responsive">-->
+    <!--<table class="table">-->
+    <!--<thead>-->
+    <!--<tr>-->
+    <!--<th>No</th>-->
+    <!--<th>Reg ID</th>-->
+    <!--<th>Reg Date</th>-->
+    <!--<th>Student</th>-->
+    <!--<th>Subject</th>-->
+    <!--<th>OS Amount</th>-->
+    <!--</tr>-->
+    <!--</thead>-->
+    <!--<tbody>-->
+        <!--{{#with osRptDoc}}-->
+        <!--{{#each content}}-->
+        <!--<tr>-->
+        <!--<td>{{no @index}}</td>-->
+        <!--<td>{{_id}}</td>-->
+        <!--<td>{{moFormat regDate "DD/MM/YYYY"}}</td>-->
+        <!--<td>{{_student.latinName}}</td>-->
+        <!--<td>{{_subject.name}}</td>-->
+        <!--<td>{{numFormat osAmount "$ 0,0.00"}}</td>-->
+        <!--</tr>-->
+            <!--{{/each}}-->
+    <!--<tr>-->
+    <!--<td colspan="4"></td>-->
+    <!--<td align="">Grand Total</td>-->
+        <!--{{#with osAmount}}-->
+        <!--<td align="">{{numFormat total "$ 0,0.00"}}</td>-->
+            <!--{{/with}}-->
+    <!--</tr>-->
+        <!--{{/with}}-->
+    <!--</tbody>-->
+    <!--</table>-->
+    <!--</div>-->
+    <!--<div class="row">-->
+    <!--<div class="pull-right" style="text-align: left; width: 30%;">-->
+    <!--Date:......../........./.........<br><br>-->
+    <!--Prepared By ...........-->
+    <!--</div>-->
+    <!--</div>-->
+</template>
+

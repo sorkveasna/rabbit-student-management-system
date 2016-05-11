@@ -1,0 +1,145 @@
+<head>
+    <link rel="icon" href="System_Rabbit.png">
+    <title>Rabbit</title>
+</head>
+<template name="mainLayout">
+    <body style="margin-top: 60px">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="{{pathFor 'home'}}">
+                    <img src="System_Rabbit.png" height="30" width="30">
+                </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="{{pathFor 'home'}}"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+
+
+                    <!--Data-->
+                    {{#if isInRole 'Data'}}
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-database" aria-hidden="true"></i> Data<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li class="{{isActiveRoute name='student'}}">
+                                    <a href="{{pathFor 'student'}}">
+                                        <i class="fa fa-graduation-cap" aria-hidden="true"></i> Student</a>
+                                </li>
+                                <li class="{{isActiveRoute name='register'}}">
+                                    <a href="{{pathFor 'register'}}">
+                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Register</a>
+                                </li>
+                                <li class="{{isActiveRoute name='payment'}}">
+                                    <a href="{{pathFor 'payment'}}">
+                                        <i class="fa fa-money" aria-hidden="true"></i> Payment</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li class="{{isActiveRoute name='status'}}">
+                                    <a href="{{pathFor 'status'}}">
+                                        <i class="fa fa-user-md" aria-hidden="true"></i> Status</a>
+                                </li>
+                            </ul>
+                        </li>
+                    {{/if}}
+
+                    <!--Setting-->
+                    {{#if isInRole 'Setting'}}
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-cog fa-spin" aria-hidden="true"></i> Setting<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li class="{{isActiveRoute name='subject'}}">
+                                    <a href="{{pathFor 'subject'}}">
+                                        <i class="fa fa-book" aria-hidden="true"></i> Subject</a>
+                                </li>
+                                <li class="{{isActiveRoute name='teacher'}}">
+                                    <a href="{{pathFor 'teacher'}}">
+                                        <i class="fa fa-users" aria-hidden="true"></i> Teacher</a>
+                                </li>
+                            </ul>
+                        </li>
+                    {{/if}}
+
+                    <!--Report-->
+                    {{#if isInRole 'Report'}}
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-file-archive-o" aria-hidden="true"></i> Report
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li class="{{isActiveRoute name='registerRpt'}}">
+                                    <a href="{{pathFor 'registerRpt'}}">
+                                        <i class="fa fa-file" aria-hidden="true"></i> Register</a>
+                                </li>
+                                <li class="{{isActiveRoute name='paymentRpt'}}">
+                                    <a href="{{pathFor 'paymentRpt'}}">
+                                        <i class="fa fa-file-text-o" aria-hidden="true"></i> Payment</a>
+                                </li>
+                                <li class="{{isActiveRoute name='osRpt'}}">
+                                    <a href="{{pathFor 'osRpt'}}">
+                                        <i class="fa fa-file-o" aria-hidden="true"></i> Out Standing</a>
+                                </li>
+                                <li class="{{isActiveRoute name='statusRpt'}}">
+                                    <a href="{{pathFor 'statusRpt'}}">
+                                        <i class="fa fa-file-image-o" aria-hidden="true"></i> Status</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li class="{{isActiveRoute name='subjectRptGen'}}">
+                                    <a href="{{pathFor 'subjectRptGen'}}" target="_blank">
+                                        <i class="fa fa-file-code-o" aria-hidden="true"></i> Subject</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                    {{/if}}
+                    {{#if isInRole 'Setting'}}
+                        <!--User add roles-->
+                        <li class="{{isActiveRoute name='userToRole'}}">
+                            <a href="{{pathFor 'userToRole'}}">
+                                <i class="fa fa-key" aria-hidden="true"></i> Role</a>
+                        </li>
+                            <li class="{{isActiveRoute name='company'}}">
+                                <a href="{{pathFor 'company'}}">
+                                    <i class="fa fa-building-o" aria-hidden="true"></i> Company</a>
+                            </li>
+                    {{/if}}
+                    <!--{{#if isInRole 'super'}}-->
+                        <!--&lt;!&ndash;User add roles&ndash;&gt;-->
+                        <!--<li class="{{isActiveRoute name='company'}}">-->
+                            <!--<a href="{{pathFor 'company'}}">-->
+                                <!--<i class="fa fa-building" aria-hidden="true"></i> Company</a>-->
+                        <!--</li>-->
+                    <!--{{/if}}-->
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    {{> loginButtons}}<!-- here -->
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <!--Breadcrumb-->
+        <legend style="font-size: 28px; font-weight: bold" class="animated lightSpeedIn">
+            {{pageHeader}}
+            {{> breadcrumb}}
+        </legend>
+
+        <!--Content-->
+        {{> Template.dynamic template=content}}
+        <!--Footer-->
+        <footer>
+            <p class="text-center">&copy; 2016 Rabbit IT Solution</p>
+        </footer>
+    </div> <!-- /container -->
+    </body>
+</template>

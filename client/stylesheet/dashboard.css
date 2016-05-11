@@ -1,0 +1,67 @@
+
+.info-box.danger {
+    background: #00796b;
+    border: 1px solid #00796b;
+    height: 125px;
+    width: 280px;
+    margin-bottom: 12px;
+}
+
+.info-box i {
+    display: block;
+    height: 124px;
+    font-size: 65px;
+    line-height: 125px;
+    width: 110px;
+    float: left;
+    text-align: center;
+    border-right: 2px solid rgba(255, 255, 255, 0.5);
+    margin-right: 15px;
+    padding-right: 30;
+    color: rgba(255, 255, 255, 0.75);
+}
+.fa {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.h1-dashboard {
+    font-size: 33px;
+    margin-top: 7px;
+    color: #BFDDDA;
+}
+
+.h1-dashboard:hover{
+    color: white;
+}
+
+.no-underline:hover {
+    text-decoration: none;
+}
+
+.simple-text{
+    color: #BFDDDA;
+    font-size: 12px;
+}
+
+.dashboard-a{
+    color: #BFDDDA;
+}
+
+.dashboard-a:hover{
+    color: white;
+}
+
+.img-dashboard{
+    margin-top: 3px;
+}
