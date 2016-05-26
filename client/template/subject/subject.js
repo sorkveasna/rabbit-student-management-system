@@ -58,47 +58,6 @@ Template.subjectAction.events({
     }
 });
 
-// Template.subjectAction.events({
-//     'click .jsUpdate': function () {
-//         FlowRouter.go('subjectUpdate', {id: this._id});
-//     },
-//     'click .jsRemove': function () {
-//         var self = this;
-//         alertify.confirm("Are you sure want to delete?",
-//             function () {
-//                 Collection.Status.remove({_id: self._id}); /// remove by _id?
-//                 alertify.success('Deleted');
-//             },
-//             function () {
-//                 alertify.error('Cancel');
-//             });
-//     }
-// });
-
-//Update
-// Template.subjectUpdate.onCreated(function () {
-//     // let subjectId = FlowRouter.getParam("id");
-//     // this.subscribe("subject", subjectId);
-//     debugger
-// });
-// Template.subjectUpdate.helpers({
-//     data: function () {
-//         var id = FlowRouter.getParam('id');
-//         var subject = Collection.Status.findOne({_id: id});
-//         return subject;
-//     }
-// });
-
-//Show
-// Template.subjectShow.onCreated(function () {
-//     this.subscribe('subjects');
-// });
-//
-// Template.subjectShow.helpers({
-//     data: function () {
-//         return Collection.Status.findOne(this._id);
-//     }
-// });
 //hook
 AutoForm.hooks({
         subjectInsert:{//id autoform

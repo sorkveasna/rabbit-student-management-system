@@ -27,6 +27,7 @@
                         </div>
                         <div class="col-xs-6 col-md-4">
                             {{>afQuickField name= "emergencyContact"}}
+                            {{> afQuickField name='photo'}}
                         </div>
                     </div>
                 </fieldset>
@@ -38,77 +39,78 @@
 </template>
 <!--update-->
 <template name="studentUpdate">
-    <!--{{#if Template.subscriptionsReady}}-->
-        <div class="panel panel-default">
-            <div class="panel-body">
-                {{#autoForm collection="Collection.Student" doc=this id="studentUpdate" type="update"}}
-                    <fieldset>
-                        <div class="row">
-                            <div class="col-xs-6 col-md-4">
-                                {{>afQuickField name= "khmerName"}}
-                                {{>afQuickField name= "latinName"}}
-                                {{>afQuickField name= "gender"}}
-                                {{>afQuickField name= "maritalStatus"}}
-                                {{>afQuickField name= "birthDate"}}
-                                {{>afQuickField name= "telephone"}}
-                                {{>afQuickField name= "email"}}
-                            </div>
-                            <div class="col-xs-6 col-md-4">
-                                {{>afQuickField name= "currentAddress"}}
-                            </div>
-                            <div class="col-xs-6 col-md-4">
-                                {{>afQuickField name= "emergencyContact"}}
-                            </div>
+<!--{{#if Template.subscriptionsReady}}-->
+    <div class="panel panel-default">
+        <div class="panel-body">
+            {{#autoForm collection="Collection.Student" doc=this id="studentUpdate" type="update"}}
+                <fieldset>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-4">
+                            {{>afQuickField name= "khmerName"}}
+                            {{>afQuickField name= "latinName"}}
+                            {{>afQuickField name= "gender"}}
+                            {{>afQuickField name= "maritalStatus"}}
+                            {{>afQuickField name= "birthDate"}}
+                            {{>afQuickField name= "telephone"}}
+                            {{>afQuickField name= "email"}}
                         </div>
-                    </fieldset>
-                    <Button type="submit" class="btn btn-primary fa fa-save"> Save</Button>
-                {{/autoForm}}
-            </div>
+                        <div class="col-xs-6 col-md-4">
+                            {{>afQuickField name= "currentAddress"}}
+                        </div>
+                        <div class="col-xs-6 col-md-4">
+                            {{>afQuickField name= "emergencyContact"}}
+                            {{> afQuickField name='photo'}}
+                        </div>
+                    </div>
+                </fieldset>
+                <Button type="submit" class="btn btn-primary fa fa-save"> Save</Button>
+            {{/autoForm}}
         </div>
-    <!--{{else}}-->
-        <!--{{> spinner}}-->
-    <!--{{/if}}-->
+    </div>
+        <!--{{else}}-->
+    <!--{{> spinner}}-->
+        <!--{{/if}}-->
 </template>
 
 <!--Show-->
 <template name="studentShow">
-    <!--{{#if Template.subscriptionsReady}}-->
+<!--{{#if Template.subscriptionsReady}}-->
         <!--{{#with data}}-->
-            <dl class="dl-horizontal">
-                <dt>ID:</dt>
-                <dd>{{_id}}</dd>
+        <dl class="dl-horizontal">
+            <dt>ID:</dt>
+            <dd>{{_id}}</dd>
 
-                <dt>Khmer Name:</dt>
-                <dd>{{khmerName}}</dd>
+            <dt>Khmer Name:</dt>
+            <dd>{{khmerName}}</dd>
 
-                <dt>Latin Name:</dt>
-                <dd>{{latinName}}</dd>
+            <dt>Latin Name:</dt>
+            <dd>{{latinName}}</dd>
 
-                <dt>Gender:</dt>
-                <dd>{{gender}}</dd>
+            <dt>Gender:</dt>
+            <dd>{{gender}}</dd>
 
-                <dt>Marital Status:</dt>
-                <dd>{{maritalStatus}}</dd>
+            <dt>Marital Status:</dt>
+            <dd>{{maritalStatus}}</dd>
 
-                <dt>Date Of Birth:</dt>
-                <dd>{{moFormat birthDate "DD/MM/YYYY"}}</dd>
+            <dt>Date Of Birth:</dt>
+            <dd>{{moFormat birthDate "DD/MM/YYYY"}}</dd>
 
-                <dt>Telephone:</dt>
-                <dd>{{telephone}}</dd>
+            <dt>Telephone:</dt>
+            <dd>{{telephone}}</dd>
 
-                <dt>Email:</dt>
-                <dd>{{email}}</dd>
+            <dt>Email:</dt>
+            <dd>{{email}}</dd>
 
-                <dt>Current Address:</dt>
-                <dd>{{currentAddress}}</dd>
+            <dt>Current Address:</dt>
+            <dd>{{currentAddress}}</dd>
 
-                <dt>Emergency Contact:</dt>
-                <dd>{{emergencyContact}}</dd>
-            </dl>
-        <!--{{/with}}-->
-    <!--{{else}}-->
-        <!--{{> spinner}}-->
-    <!--{{/if}}-->
+            <dt>Emergency Contact:</dt>
+            <dd>{{emergencyContact}}</dd>
+        </dl>
+            <!--{{/with}}-->
+        <!--{{else}}-->
+    <!--{{> spinner}}-->
+        <!--{{/if}}-->
 </template>
 
 <!--action-->

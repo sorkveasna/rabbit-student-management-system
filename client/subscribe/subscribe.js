@@ -4,3 +4,4 @@
 // Meteor.subscribe('payments');
 // Meteor.subscribe('teachers');
 Meteor.subscribe('user');
+Meteor.subscribe('files');

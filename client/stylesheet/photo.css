@@ -1,0 +1,17 @@
+.img-circle {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+}
+
+img {
+    vertical-align: middle;
+    margin: -2px;
+    margin-right: 5px;
+}
+
+table.table-bordered.dataTable tbody th, table.table-bordered.dataTable tbody td {
+    border-bottom-width: 0;
+    vertical-align: middle;
+    text-align: center;
+}
