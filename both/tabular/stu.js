@@ -77,6 +77,6 @@ TabularTables.Student = new Tabular.Table({
                     return lightbox(img.url(), doc._id, doc.name);
                 }
             }
-        }
+        },
     ]
 });

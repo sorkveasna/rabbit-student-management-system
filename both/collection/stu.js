@@ -111,7 +111,6 @@ Schema.Student = new SimpleSchema({
     'emergencyContact.email': {
         type: String
     },
-
     photo: {
         type: String,
         autoform: {

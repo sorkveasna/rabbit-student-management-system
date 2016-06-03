@@ -82,5 +82,8 @@ peerlibrary:fs
 ostrio:meteor-root
 czbaker:lightbox2
 theara:lightbox-helpers
-#theara:autoform-file
 meteorhacks:aggregate
+
+###Timer Server###
+simple:reactive-method
+xamfoo:reactive-obj

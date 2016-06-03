@@ -2,46 +2,58 @@
 .info-box.purple {
     background: #4a148c;
     border: 1px solid #4a148c;
+    margin-left: 15px;
+    margin-top: 10px;
 }
 
 .info-box.blue {
     background: #0d47a1;
     border: 1px solid #0d47a1;
+    margin-left: 4px;
+    margin-top: 10px;
 }
 
 .info-box.red {
     background: #d50000;
     border: 1px solid #d50000;
+    margin-left: -6px;
+    margin-top: 10px;
 }
 
 .info-box.blue-light {
     background: #01579b;
     border: 1px solid #01579b;
+    margin-left: -15px;
+    margin-top: 10px;
 }
 
 .info-box.teal {
     background: #004d40;
     border: 1px solid #004d40;
+    margin-left: 15px;
 }
 
 .info-box.green {
     background: #1b5e20;
     border: 1px solid #1b5e20;
+    margin-left: 4px;
 }
 
 .info-box.orange {
     background: #e65100;
     border: 1px solid #e65100;
+    margin-left: -6px;
 }
 
 .info-box.black {
     background: #616161;
     border: 1px solid #616161;
+    margin-left: -15px;
 }
 
 .info-box {
     height: 125px;
-    width: 280px;
+    width: 262px;
     margin-bottom: 12px;
 }
 
@@ -108,4 +120,28 @@
 
 .img-dashboard {
     margin-top: 3px;
+}
+
+/*Panel*/
+.panel-success > .panel-heading {
+    color: #FFFFFF;
+    background-color: #00796B;
+    border-color: #00796B;
+}
+.panel-success {
+    border-color: #00796B;
+}
+.panel{
+    border-radius: 0px;
+}
+.panel-heading {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+/*server Timer*/
+.label-teal {
+    background-color: white;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+    color: #00796B;
 }

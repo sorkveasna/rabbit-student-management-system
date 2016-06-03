@@ -7,11 +7,7 @@ Template.student.onRendered(function () {
 //insert
 Template.student.events({
     'click #js-insert': function (error, result) {
-
-        alertify.student(renderTemplate(Template.studentInsert))
-            .set({
-                title: fa('plus', ' Student')
-            })
+        alertify.student(fa("plus", "Patient"), renderTemplate(Template.studentInsert))
             .maximize();
     }
 });
@@ -32,9 +28,6 @@ Template.studentAction.events({
         });
     },
 
-    // 'click #js-update': function () {
-    //     FlowRouter.go('studentUpdate', {id: this._id});
-    // },
     'click .jsRemove': function (error, result) {
         var self = this;
         alertify.confirm("Are you sure want to delete?",
@@ -47,7 +40,8 @@ Template.studentAction.events({
             });
     },
     'click #js-show': function () {
-        Meteor.call('findOne', 'Collection.Student', {_id: this._id}, {}, function (error, student) {
+        var data = this;
+        Meteor.call('findOne', 'Collection.Student', {_id: data._id}, {}, function (error, student) {
             if (error) {
                 Bert.alert(error.message, 'danger', 'growl-bottom-right');
             }
@@ -57,33 +51,25 @@ Template.studentAction.events({
                         title: fa('eye', ' Student')
                     });
             }
+
         });
-    }
+    },
+    // 'click #js-show': function (e, t) {
+    //     var data = this;
+    //
+    //     // Photo
+    //     data.photoUrl = null;
+    //     if (!_.isUndefined(data.photo)) {
+    //         data.photoUrl = Files.findOne(data.photo).url();
+    //     }
+    //
+    //     alertify.student(fa("eye", "Student"), renderTemplate(Template.studentShow,
+    //         data));
+    // }
 
 });
-//Update
-// Template.studentUpdate.onCreated(function () {
-//     let studentId = FlowRouter.getParam("id");
-//     this.subscribe("student", studentId);
-// });
-
-// Template.studentUpdate.helpers({
-//     studentDoc: function () {
-//         var studentId = FlowRouter.getParam('id');
-//         var student = Collection.Student.findOne(studentId);
-//         return student;
-//     }
-// });
-
-//Show
-// Template.studentShow.onCreated(function () {
-//     this.subscribe('students');
-// });
 
 Template.studentShow.helpers({
-    // data: function () {
-    //     return Collection.Student.findOne(this._id);
-    // },
     currentAddress: function () {
         var str = "<table><thead>" +
             "<tr>" +

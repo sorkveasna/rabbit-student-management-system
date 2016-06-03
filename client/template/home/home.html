@@ -3,132 +3,149 @@
     {{#if currentUser}}
 
         <h2 style="color: #00695C">
-            <img class="img-dashboard" src="rabbit-king.png" width="30" height="30">RABBIT STUDENT MANAGEMENT DASHBOARD
+            <!--Server date time-->
+            {{> welcome_screen}}
         </h2>
-
-        <div class="row">
-            <!--Student-->
-            <div class="col-md-3">
-                <div class="info-box purple">
-                    <a href="{{pathFor 'student'}}"><i class="fa fa-graduation-cap fa-5x"></i></a>
-                    <a href="{{pathFor 'student'}}" class="no-underline">
-                        <div class="h1-dashboard">Student</div>
-                    </a>
-                    <div class="simple-text">
-                        Add New Student<br>
-                        Update Student<br>
-                        Remove Student
+        <div class="panel panel-success">
+            <div class="panel-heading" style="text-align: center">
+                <img src="System_Rabbit.png" style="vertical-align: -2px" width="20" height="20">
+                <b>Rabbit Student Register</b></div>
+            <div class="row">
+                <!--Student-->
+                <div class="col-md-3">
+                    <div class="info-box purple">
+                        <a href="{{pathFor 'student'}}"><i class="fa fa-graduation-cap fa-5x"></i></a>
+                        <a href="{{pathFor 'student'}}" class="no-underline">
+                            <div class="h1-dashboard">Student</div>
+                        </a>
+                        <div class="simple-text">
+                            Add New Student<br>
+                            Update Student<br>
+                            Remove Student
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!--Register-->
-            <div class="col-md-3">
-                <div class="info-box blue">
-                    <a href="{{pathFor 'register'}}"><i class="fa fa-pencil-square-o fa-5x"></i></a>
-                    <a href="{{pathFor 'register'}}" class="no-underline">
-                        <div class="h1-dashboard">Register</div>
-                    </a>
-                    <div class="simple-text">
-                        Add New Register<br>
-                        Update Register<br>
-                        Remove Register
+                <!--Register-->
+                <div class="col-md-3">
+                    <div class="info-box blue">
+                        <a href="{{pathFor 'register'}}"><i class="fa fa-pencil-square-o fa-5x"></i></a>
+                        <a href="{{pathFor 'register'}}" class="no-underline">
+                            <div class="h1-dashboard">Register</div>
+                        </a>
+                        <div class="simple-text">
+                            Add New Register<br>
+                            Update Register<br>
+                            Remove Register
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!--payment-->
-            <div class="col-md-3">
-                <div class="info-box red">
-                    <a href="{{pathFor 'payment'}}"><i class="fa fa-money fa-5x"></i></a>
-                    <a href="{{pathFor 'payment'}}" class="no-underline">
-                        <div class="h1-dashboard">Payment</div>
-                    </a>
-                    <div class="simple-text">
-                        Add New Payment<br>
-                        Update Payment<br>
-                        Remove Payment<br>
-                        Print Payment
+                <!--payment-->
+                <div class="col-md-3">
+                    <div class="info-box red">
+                        <a href="{{pathFor 'payment'}}"><i class="fa fa-money fa-5x"></i></a>
+                        <a href="{{pathFor 'payment'}}" class="no-underline">
+                            <div class="h1-dashboard">Payment</div>
+                        </a>
+                        <div class="simple-text">
+                            Add New Payment<br>
+                            Update Payment<br>
+                            Remove Payment<br>
+                            Print Payment
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!--Status-->
-            <div class="col-md-3">
-                <div class="info-box blue-light">
-                    <a href="{{pathFor 'status'}}"><i class="fa fa-user-md fa-5x"></i></a>
-                    <a href="{{pathFor 'status'}}" class="no-underline">
-                        <div class="h1-dashboard">Status</div>
-                    </a>
-                    <div class="simple-text">
-                        Add Student Status<br>
-                        Update Student Status<br>
-                        Remove Student Status<br>
+                <!--Status-->
+                <div class="col-md-3">
+                    <div class="info-box blue-light">
+                        <a href="{{pathFor 'status'}}"><i class="fa fa-user-md fa-5x"></i></a>
+                        <a href="{{pathFor 'status'}}" class="no-underline">
+                            <div class="h1-dashboard">Status</div>
+                        </a>
+                        <div class="simple-text">
+                            Add Student Status<br>
+                            Update Student Status<br>
+                            Remove Student Status<br>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!--Subject-->
-            <div class="col-md-3">
-                <div class="info-box teal">
-                    <a href="{{pathFor 'subject'}}"><i class="fa fa-book fa-5x"></i></a>
-                    <a href="{{pathFor 'subject'}}" class="no-underline">
-                        <div class="h1-dashboard">Subject</div>
-                    </a>
-                    <div class="simple-text">
-                        Add New Subject<br>
-                        Update Subject<br>
-                        Remove Subject<br>
+                <!--Subject-->
+                <div class="col-md-3">
+                    <div class="info-box teal">
+                        <a href="{{pathFor 'subject'}}"><i class="fa fa-book fa-5x"></i></a>
+                        <a href="{{pathFor 'subject'}}" class="no-underline">
+                            <div class="h1-dashboard">Subject</div>
+                        </a>
+                        <div class="simple-text">
+                            Add New Subject<br>
+                            Update Subject<br>
+                            Remove Subject<br>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!--Teacher-->
-            <div class="col-md-3">
-                <div class="info-box green">
-                    <a href="{{pathFor 'teacher'}}"><i class="fa fa-users fa-5x"></i></a>
-                    <a href="{{pathFor 'teacher'}}" class="no-underline">
-                        <div class="h1-dashboard">Teacher</div>
-                    </a>
-                    <div class="simple-text">
-                        Add New Teacher<br>
-                        Update Teacher<br>
-                        Remove Teacher<br>
+                <!--Teacher-->
+                <div class="col-md-3">
+                    <div class="info-box green">
+                        <a href="{{pathFor 'teacher'}}"><i class="fa fa-users fa-5x"></i></a>
+                        <a href="{{pathFor 'teacher'}}" class="no-underline">
+                            <div class="h1-dashboard">Teacher</div>
+                        </a>
+                        <div class="simple-text">
+                            Add New Teacher<br>
+                            Update Teacher<br>
+                            Remove Teacher<br>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!--Report-->
-            <div class="col-md-3">
-                <div class="info-box orange">
-                    <a href="{{pathFor '#'}}"><i class="fa fa-file-archive-o fa-5x"></i></a>
+                <!--Report-->
+                <div class="col-md-3">
+                    <div class="info-box orange">
+                        <a href="{{pathFor '#'}}"><i class="fa fa-file-archive-o fa-5x"></i></a>
                         <div class="h1-dashboard">Report</div>
-                    <div class="simple-text">
-                        <a href="{{pathFor 'registerRpt'}}" class="dashboard-a no-underline">
-                            Register Report</a><br>
-                        <a href="{{pathFor 'paymentRpt'}}" class="dashboard-a no-underline">
-                            Payment Report</a><br>
-                        <a href="{{pathFor 'osRpt'}}" class="dashboard-a no-underline">
-                            Outstanding Report</a><br>
-                        <a href="{{pathFor 'statusRpt'}}" class="dashboard-a no-underline">
-                            Status Report</a>
+                        <div class="simple-text">
+                            <a href="{{pathFor 'registerRpt'}}" class="dashboard-a no-underline">
+                                Register Report</a><br>
+                            <a href="{{pathFor 'paymentRpt'}}" class="dashboard-a no-underline">
+                                Payment Report</a><br>
+                            <a href="{{pathFor 'osRpt'}}" class="dashboard-a no-underline">
+                                Outstanding Report</a><br>
+                            <a href="{{pathFor 'statusRpt'}}" class="dashboard-a no-underline">
+                                Status Report</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!--Help-->
-            <div class="col-md-3">
-                <div class="info-box black">
-                    <a href="{{pathFor '#'}}"><i class="fa fa-info fa-5x"></i></a>
-                    <a href="{{pathFor '#'}}" class="no-underline">
-                        <div class="h1-dashboard">Help</div>
-                    </a>
-                    <div class="simple-text">
-                        <a href="{{pathFor 'subjectRptGen'}}" class="dashboard-a no-underline">
-                            Subject Report</a><br>
-                        <a href="{{pathFor '#'}}" class="dashboard-a no-underline">
-                            System Document</a><br>
-                        <a href="{{pathFor 'company'}}" class="dashboard-a no-underline">
-                            About Us</a>
+                <!--Help-->
+                <div class="col-md-3">
+                    <div class="info-box black">
+                        <a href="{{pathFor '#'}}"><i class="fa fa-info fa-5x"></i></a>
+                        <a href="{{pathFor '#'}}" class="no-underline">
+                            <div class="h1-dashboard">Help</div>
+                        </a>
+                        <div class="simple-text">
+                            <a href="{{pathFor 'subjectRptGen'}}" class="dashboard-a no-underline">
+                                Subject Report</a><br>
+                            <a href="{{pathFor '#'}}" class="dashboard-a no-underline">
+                                System Document</a><br>
+                            <a href="{{pathFor 'company'}}" class="dashboard-a no-underline">
+                                About Us</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     {{else}}
+        <!--Server date time-->
+        {{> welcome_screen}}
         <h2>Please Login!</h2>
         <h2>Then Contact to Admin</h2>
     {{/if}}
+</template>
+
+<!--welcome screen-->
+<template name="welcome_screen">
+    <!--Server date time-->
+    <h3 class="text-center">
+        <span class="label label-{{serverDateTime.css}}">
+            <i class="fa fa-calendar"></i> {{serverDateTime.val}}
+        </span>
+    </h3>
 </template>

@@ -122,6 +122,7 @@ sacha:spin@2.3.1
 service-configuration@1.0.5
 session@1.1.1
 sha@1.0.4
+simple:reactive-method@1.0.2
 spacebars@1.0.7
 spacebars-compiler@1.0.7
 srp@1.0.4
@@ -148,6 +149,7 @@ underscorestring:underscore.string@3.3.4
 url@1.0.5
 webapp@1.2.3
 webapp-hashing@1.0.5
+xamfoo:reactive-obj@0.5.0
 yogiben:autoform-file@0.4.2
 zimme:active-route@2.3.2
 zimme:collection-behaviours@1.0.4
